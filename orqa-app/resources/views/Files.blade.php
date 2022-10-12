@@ -13,7 +13,7 @@
     <div style="margin-left: 100px; margin-top: 10px;"> 
         <h1 style="padding: 10px">Files</h1>
         <h5 style="padding: 10px">Upload & download your files</h5>
-        <a href="/NewFile" type="button" class="btn btn-primary" style="margin-left: 10px">New File</a>
+        <a href="/newFile" type="button" class="btn btn-primary" style="margin-left: 10px">New File</a>
     </div>
     <table class="table" style="margin:50px auto auto; width: 1000px">
         <thead>
@@ -26,9 +26,14 @@
           </tr>
         </thead>
         <tbody>
-            {{-- @foreach ($collection as $item)
-                
-            @endforeach --}}
+            @foreach ($files as $file)
+                <tr>
+                  <td></td>
+                  <td>{{$file->fileName}}</td>
+                  <td>{{$file->created_at}}</td>
+                  <td>{{$file->fileSize." MB"}}</td>
+                </tr>
+            @endforeach
         </tbody>
       </table>
 </body>

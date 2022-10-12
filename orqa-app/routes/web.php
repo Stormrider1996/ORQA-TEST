@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,13 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Files');
-});
+Route::get('/', [FileController::class, 'index']);
 
-Route::get('/NewFile', function () {
-    return view('NewFile');
-});
+Route::get('/newFile', [FileController::class,'create']);
+
+Route::post('/file', [FileController::class,'store']);
 
 Auth::routes();
 
