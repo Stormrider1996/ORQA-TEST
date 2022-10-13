@@ -19,7 +19,11 @@ Route::get('/', [FileController::class, 'index']);
 
 Route::get('/newFile', [FileController::class,'create']);
 
-Route::post('/file', [FileController::class,'store']);
+Route::post('/files', [FileController::class,'store']);
+
+Route::get('/files/{file}', [FileController::class,'retrieve']);
+
+Route::delete('/files/{file}', [FileController::class,'destroy']);
 
 Auth::routes();
 

@@ -15,7 +15,7 @@
         <h5 style="padding: 10px">Upload a new file</h5>
         <a href="/" type="button" class="btn btn-primary" style="margin-left: 10px">All files</a>
     </div>
-    <form method="POST" action="/file" enctype="multipart/form-data">
+    <form method="POST" action="/files" enctype="multipart/form-data">
         @csrf
         <div>
             <input class="form-control form-control-lg" id="formFileLg" type="file" style="margin-top: 50px; margin-left: 100px; width: 500px;" name="file" />
